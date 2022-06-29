@@ -23,7 +23,6 @@ Install packer (which will verify and build the image)
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install packer
-
 ```
 
 ### Export DigitalOcean API Token
@@ -38,23 +37,22 @@ export DIGITALOCEAN_TOKEN={token}
 Make the changes you need to the scripts and marketplace template json.
 ```
 cd /usr/tmp
-
 ```
 
 Verify the template:
 ```
 packer validate soos-dast/marketplace-image.json
-
 ```
 
 Build the template:
 ```
 packer build soos-dast/marketplace-image.json
-
 ```
 
+(and then go get a coffee - it takes a few minutes :) )
 
 
 ## Links:
 [DigitalOcean Marketplace Partner Tools](https://github.com/digitalocean/marketplace-partners)
+
 [DigitalOcean Vendor Guidelines and Resources](https://marketplace.digitalocean.com/vendors/guidelines-resources#droplet-1-click-apps)
