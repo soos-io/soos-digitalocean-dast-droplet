@@ -54,7 +54,7 @@ Build the template:
 packer build soos-dast/marketplace-image.json
 ```
 
-(and then go get a coffee :coffee: - it takes a few minutes :grin: )
+( ...and then go get a coffee :coffee: - it takes a few minutes :grin: )
 
 ### Test the Snapshot
 Create a droplet from the new snapshot image.
