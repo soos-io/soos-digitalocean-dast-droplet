@@ -1,8 +1,7 @@
 {
   "variables": {
     "do_token": "{{env `DIGITALOCEAN_TOKEN`}}",
-    "image_name": "soos-dast-on-ubuntu-20-04-snapshot-{{timestamp}}",
-    "apt_packages": "fail2ban build-essential"
+    "image_name": "soos-dast-on-ubuntu-20-04-snapshot-{{timestamp}}"
   },
   "sensitive-variables": ["do_token"],
   "builders": [
@@ -46,7 +45,6 @@
       "inline": [
         "apt -qqy update",
         "apt -qqy -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' full-upgrade",
-        "apt -qqy -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' install {{user `apt_packages`}}",
         "apt-get -qqy clean"
       ]
     },
