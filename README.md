@@ -5,7 +5,7 @@ The DigitalOcean droplet definition for one-click SOOS DAST scanning
 
 ### Deploy a DigitalOcean Droplet
 
-(Create the initial Droplet)[https://cloud.digitalocean.com/droplets/new] from the existing Ubuntu 20.04 image.
+[Create the initial Droplet](https://cloud.digitalocean.com/droplets/new) from the existing Ubuntu 20.04 image.
 
 Use the basic 5/mo plan.
 
@@ -56,5 +56,5 @@ packer build soos-dast/marketplace-image.json
 
 
 ## Links:
-(DigitalOcean Marketplace Partner Tools)[https://github.com/digitalocean/marketplace-partners]
-(DigitalOcean Vendor Guidelines and Resources)[https://marketplace.digitalocean.com/vendors/guidelines-resources#droplet-1-click-apps]
+[DigitalOcean Marketplace Partner Tools](https://github.com/digitalocean/marketplace-partners)
+[DigitalOcean Vendor Guidelines and Resources](https://marketplace.digitalocean.com/vendors/guidelines-resources#droplet-1-click-apps)
