@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# SOOS DAST DigitalOcean Droplet
+
+cat <<EOF
+********************************************************************************
+
+Welcome to SOOS.io's DigitalOcean 1-Click DAST Droplet.
+
+This droplet has installed the latest SOOS DAST docker image.
+
+Execute /usr/soos/run-soos-dast.sh to run a DAST scan against a target website.
+
+For help and more information, visit https://kb.soos.io
+
+Thank you,
+SOOS
+
+********************************************************************************
+To delete this message of the day: rm -rf $(readlink -f ${0})
+EOF

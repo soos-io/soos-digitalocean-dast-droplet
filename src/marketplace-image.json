@@ -1,0 +1,67 @@
+{
+  "variables": {
+    "do_token": "{{env `DIGITALOCEAN_TOKEN`}}",
+    "image_name": "soos-dast-snapshot-{{timestamp}}"
+  },
+  "sensitive-variables": ["do_token"],
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_token": "{{user `do_token`}}",
+      "image": "ubuntu-20-04-x64",
+      "region": "nyc3",
+      "size": "s-1vcpu-1gb",
+      "ssh_username": "root",
+      "snapshot_name": "{{user `image_name`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": ["cloud-init status --wait"]
+    },
+    {
+      "type": "shell",
+      "inline": ["mkdir -p /usr/soos"]
+    },
+    {
+      "type": "file",
+      "source": "soos-dast/files/etc/",
+      "destination": "/etc/"
+    },
+    {
+      "type": "file",
+      "source": "soos-dast/files/usr/",
+      "destination": "/usr/"
+    },
+    {
+      "type": "shell",
+      "environment_vars": [
+        "DEBIAN_FRONTEND=noninteractive",
+        "LC_ALL=C",
+        "LANG=en_US.UTF-8",
+        "LC_CTYPE=en_US.UTF-8"
+      ],
+      "inline": [
+        "apt -qqy update",
+        "apt -qqy -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' full-upgrade",
+        "apt-get -qqy clean"
+      ]
+    },
+    {
+      "type": "shell",
+      "environment_vars": [
+        "DEBIAN_FRONTEND=noninteractive",
+        "LC_ALL=C",
+        "LANG=en_US.UTF-8",
+        "LC_CTYPE=en_US.UTF-8"
+      ],
+      "scripts": [
+        "soos-dast/scripts/10-docker.sh",
+        "soos-dast/scripts/20-soos-dast.sh",
+        "soos-dast/scripts/90-cleanup.sh",
+        "soos-dast/scripts/99-img-check.sh"
+      ]
+    }
+  ]
+}
