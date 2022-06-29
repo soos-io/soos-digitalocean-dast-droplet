@@ -37,6 +37,8 @@ export DIGITALOCEAN_TOKEN={token}
 ### Make your template changes and Verify
 Make the changes you need to the scripts and marketplace template json.
 
+Ensure that any new files added are using Unix (LF) line endings.
+
 Then move to the /usr/tmp directory:
 ```
 cd /usr/tmp
@@ -52,7 +54,7 @@ Build the template:
 packer build soos-dast/marketplace-image.json
 ```
 
-(and then go get a coffee - it takes a few minutes :) )
+(and then go get a coffee :coffee: - it takes a few minutes :) )
 
 ### Test the Snapshot
 Create a droplet from the new snapshot image.
