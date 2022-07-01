@@ -7,7 +7,7 @@ The DigitalOcean droplet definition for one-click SOOS DAST scanning
 
 [Create the initial Droplet](https://cloud.digitalocean.com/droplets/new) from the existing Ubuntu 20.04 image.
 
-Use the basic 5/mo plan.
+Use the basic $4/mo plan.
 
 ### Copy Repository Files
 Push the src files from this repository to /usr/tmp/soos-dast. Use scp or WinSCP etc. to transfer files.
