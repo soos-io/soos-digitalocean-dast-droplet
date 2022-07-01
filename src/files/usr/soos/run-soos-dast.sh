@@ -23,7 +23,7 @@ $command
 
 " > $commandScript
 
-chmod +777 $commandScript
+chmod +755 $commandScript
 
 echo "We've saved your configuration to $commandScript".
 echo
