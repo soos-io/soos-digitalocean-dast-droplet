@@ -9,11 +9,20 @@ Welcome to SOOS.io's DigitalOcean 1-Click DAST Droplet.
 
 This droplet has installed the latest SOOS DAST docker image.
 
-Execute /usr/soos/run-soos-dast.sh to run a DAST scan against a target website.
+Configure a scan by running the following commands:
 
-For help and more information, visit https://kb.soos.io
+cd /usr/soos
+./configure-soos-dast.sh
 
-Thank you,
+The configuration script will save a reusable run script to the /usr/soos/ directory.
+
+You will need your client id and API key from the SOOS website to configure a scan.
+
+https://app.soos.io/integrate/dast
+
+For more help and information, visit https://kb.soos.io
+
+Thank you!
 SOOS
 
 ********************************************************************************

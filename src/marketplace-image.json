@@ -59,6 +59,7 @@
       "scripts": [
         "soos-dast/scripts/10-docker.sh",
         "soos-dast/scripts/20-soos-dast.sh",
+        "soos-dast/scripts/30-ufw.sh",
         "soos-dast/scripts/90-cleanup.sh",
         "soos-dast/scripts/99-img-check.sh"
       ]
