@@ -16,7 +16,7 @@ cd /usr/soos
 
 The configuration script will save a reusable run script to the /usr/soos/ directory.
 
-You will need your client id and API key from the SOOS website to configure a scan.
+You will need your Client ID and API Key from the SOOS website to configure a scan.
 
 https://app.soos.io/integrate/dast
 
